@@ -58,3 +58,7 @@ def analyze_sentiments(request: SentimentRequest):
         })
 
     return {"results": results}
+
+@app.post("/")
+def analyze_sentiments_root(request: SentimentRequest):
+    return analyze_sentiments(request)
